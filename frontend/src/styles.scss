@@ -1,0 +1,124 @@
+:root {
+  color-scheme: light;
+  /* פלטת מותג */
+  --lux-brand-cream: #f6f1e8;
+  --lux-brand-sand: #d8c3a5;
+  --lux-bg: var(--lux-brand-cream);
+  --lux-bg-elevated: #faf7f1;
+  --lux-ink: #2a241c;
+  --lux-ink-soft: #4a4238;
+  --lux-muted: #7a6f62;
+  --lux-line: rgba(42, 36, 28, 0.1);
+  --lux-glass: rgba(250, 247, 241, 0.72);
+  --lux-shadow: 0 24px 80px rgba(42, 32, 24, 0.1);
+  --lux-shadow-soft: 0 12px 40px rgba(42, 32, 24, 0.07);
+  --lux-accent: var(--lux-brand-sand);
+  --lux-accent-2: #c9b08e;
+  --lux-accent-ink: #2a2418;
+  /* כפתורים — בז' בהיר (מלא / מסגרת) */
+  --lux-button-fill: #efe6d8;
+  --lux-button-fill-hover: #e5dac8;
+  --lux-button-stroked-fill: #faf6ef;
+  --lux-button-stroked-fill-hover: #f3ebe0;
+  --lux-button-stroked-outline: color-mix(in srgb, var(--lux-brand-sand) 50%, #fff);
+  --lux-surface-mid: color-mix(in srgb, var(--lux-brand-sand) 28%, var(--lux-brand-cream));
+  --lux-footer-bg: #342e27;
+  --lux-footer-text: #f6f1e8;
+  --lux-footer-muted: rgba(246, 241, 232, 0.7);
+  --lux-hero-overlay: linear-gradient(
+    120deg,
+    rgba(42, 36, 28, 0.68) 0%,
+    rgba(52, 46, 39, 0.38) 45%,
+    rgba(62, 54, 46, 0.22) 100%
+  );
+  --lux-radius-lg: 22px;
+  --lux-radius-md: 14px;
+  --lux-radius-sm: 10px;
+  --lux-font-display: 'Playfair Display', 'Times New Roman', serif;
+  --lux-font-body: 'Heebo', system-ui, -apple-system, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--lux-bg);
+  color: var(--lux-ink-soft);
+  font-family: var(--lux-font-body);
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--lux-font-display);
+  color: var(--lux-ink);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.lux-container {
+  width: min(1180px, 92vw);
+  margin-inline: auto;
+}
+
+.lux-section {
+  padding-block: clamp(3.5rem, 8vw, 7rem);
+}
+
+.mat-mdc-unelevated-button.mat-primary,
+.mat-mdc-raised-button.mat-primary {
+  --mdc-filled-button-container-color: var(--lux-button-fill);
+  --mdc-filled-button-label-text-color: var(--lux-accent-ink);
+}
+
+.mat-mdc-unelevated-button.mat-primary:hover,
+.mat-mdc-raised-button.mat-primary:hover {
+  --mdc-filled-button-container-color: var(--lux-button-fill-hover);
+}
+
+/* כפתורי stroke (גלריה, קישורים משניים) — רקע בז' רך, בלי לגעת ב־.ghost מעל Hero כהה */
+.mat-mdc-outlined-button:not(.ghost) {
+  --mdc-outlined-button-container-color: var(--lux-button-stroked-fill);
+  --mdc-outlined-button-outline-color: var(--lux-button-stroked-outline);
+  --mdc-outlined-button-label-text-color: var(--lux-ink-soft);
+}
+
+.mat-mdc-outlined-button:not(.ghost):hover {
+  --mdc-outlined-button-container-color: var(--lux-button-stroked-fill-hover);
+}
+
+.mat-mdc-outlined-button.active:not(.ghost) {
+  --mdc-outlined-button-container-color: var(--lux-button-fill);
+  --mdc-outlined-button-outline-color: var(--lux-brand-sand);
+  --mdc-outlined-button-label-text-color: var(--lux-ink);
+}
+
+.mat-toolbar-single-row {
+  --mat-toolbar-container-background-color: transparent;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--lux-brand-sand) 45%, transparent);
+}
+
+.cdk-overlay-container .lux-dialog .mat-mdc-dialog-container {
+  padding: 0;
+  border-radius: 18px;
+  overflow: hidden;
+}
